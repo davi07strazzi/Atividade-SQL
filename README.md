@@ -1,2 +1,27 @@
 # Atividade-SQL
 TRabalho coletivo sql
+CREATE DATABASE escola;
+USE escola;
+CREATE TABLE estudantes(
+id_estudante INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
+data_nascimento DATE NOT NULL,
+localidade VARCHAR(10) NOT NULL,
+veiculo_proprio BIT NOT NULL,
+profissao VARCHAR(100) NOT NULL 
+);
+ALTER TABLE estudantes ADD COLUMN idade INT NOT NULL;
+
+INSERT INTO estudantes (data_nascimento, localidade, veiculo_proprio, profissao)
+VALUES ('2006-10-10', 'Leste', 0, 'Analista de Suporte'),
+('2006-09-06', 'Sul', 1, 'Producao'),
+('1993-05-01', 'Oeste', 0, 'Estoquista'),
+('1998-01-30', 'Oeste', 1, 'Estudante'),
+('2003-12-13', 'Oeste', 0, 'Auxiliar Financeiro'),
+('2000-05-19', 'Oeste', 0, 'Assistente de TI'),
+('1974-03-05', 'Oeste', 0, 'Estudante'),
+('1977-05-16', 'Norte', 0, 'Organizacao'),
+('2002-08-30', 'Cambé', 0, 'Estudante');
+select * from estudantes;
+SELECT * FROM estudantes WHERE data_nascimento > '2006-10-10';
+
+
